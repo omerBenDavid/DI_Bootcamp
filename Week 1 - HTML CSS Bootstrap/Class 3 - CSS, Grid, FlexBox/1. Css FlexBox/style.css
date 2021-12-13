@@ -1,0 +1,138 @@
+/*
+vh/vw - 
+px - 
+% - 
+em -
+Grid - 2 dimention
+Flex-Box - 1 dimention
+*/
+* {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.outer-div {
+    width: 100vw; /*vw מתייחס לרוחב וvh מתייחס לרוחב של האתרשלנו*/
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.inner-div {
+    width: 200px;
+    border: 1px solid #000;
+    padding: 30px;
+    text-align: center;
+}
+
+.box-1 {
+    background-color: #af47ff;
+   /* order: 1;*/
+  /* flex-grow: 1;*/
+  /*flex-shrink: 2;*/
+  width: 100%;
+}
+.box-2 {
+    background-color: #af4797;
+   /* align-self: center;*/
+  /* order: 2;*/
+  /*flex-grow: 2;*/
+  /*flex-shrink: 1;*/
+  align-self: center;
+  justify-content: center;
+  height: 30%;
+  
+}
+.box-3 {
+    background-color: #af4747;
+   /* order: 1;*/
+   /*flex-grow: 3;*/
+  /* flex-shrink: 3;*/
+  width: 100%;
+}
+
+.box-4 {
+    background-color: #47af58;
+    width: 100%;
+}
+
+.box-5 {
+    background-color: #47af58;
+    margin-left: auto;
+    width: 20%;
+}
+
+.box-6 {
+    background-color: #47af58;
+    width: 100%;
+}
+
+.longer-div {
+    display: flex;
+}
+
+.box-7 {
+    background-color: #47af58;
+    direction: rtl;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+.box-8 {
+    background-color: #47af58;
+    direction: rtl;
+    justify-content: flex-end;
+    flex-grow: 5;
+}
+.box-9 {
+    background-color: #47af58;
+    direction: rtl;
+    justify-content: flex-end;
+    flex-grow: 5;
+}
+
+.main-div {
+    width: 100vw; /*vw מתייחס לרוחב וvh מתייחס לרוחב של האתרשלנו*/
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.inner-div {
+    width: 200px;
+    border: 1px solid #000;
+    padding: 30px;
+    text-align: center;
+}
+
+.box-10 {
+    background-color: #af4797;
+    /* align-self: center;*/
+   /* order: 2;*/
+   /*flex-grow: 2;*/
+   /*flex-shrink: 1;*/
+   align-self: center;
+   justify-content: center;
+   height: 30%;
+}
+.box-11 {
+    background-color: #af47ff;
+    /* order: 1;*/
+   /* flex-grow: 1;*/
+   /*flex-shrink: 2;*/
+   width: 100%;
+  
+}
+.box-12 {
+    background-color: #af4797;
+    /* align-self: center;*/
+   /* order: 2;*/
+   /*flex-grow: 2;*/
+   /*flex-shrink: 1;*/
+   align-self: center;
+   justify-content: center;
+   height: 30%;
+}

@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .text {
+      color: white;
+  }
+  .row{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .button {
+      color: white;
+    background-color: #008CBA;
+  }

@@ -1,0 +1,11 @@
+.container {
+    border: 1px solid black;
+}
+
+.row {
+    border: 1px solid red;
+}
+
+.col-md-6 col-md-8 col-md-4 col-md-4 col-md-10 {
+    border: 1px solid blue;
+}

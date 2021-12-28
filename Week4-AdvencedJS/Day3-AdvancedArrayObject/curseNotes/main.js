@@ -211,26 +211,234 @@
 
 //_________________________________________________________
 // ## Exercise 1:  create a new array that filters only the positive value
-let numbers = [-23,-20,-17, -12, -5, 0, 1, 5, 12, 19, 20];
+// let numbers = [-23,-20,-17, -12, -5, 0, 1, 5, 12, 19, 20];
 // ## Exercise 2: Suppose you have a list of Star Trek characters,
 // and you want to get just the characters that appeared in Star Trek: The Next Generation.
 // Use filter() to filter the array of characters below
  //1
- let goodVibes = numbers.filter(elem => elem > 0);
- console.log(goodVibes);
+//  let goodVibes = numbers.filter(elem => elem > 0);
+//  console.log(goodVibes);
 
-const characters = [
-	{ name: 'James T. Kirk', series: ['Star Trek'] },
-	{ name: 'Spock', series: ['Star Trek', 'Star Trek: The Next Generation'] },
-	{ name: 'Jean-Luc Picard', series: ['Star Trek: The Next Generation'] },
-	{ name: 'Worf', series: ['Star Trek: The Next Generation', 'Star Trek: Deep Space Nine'] }
- ];
+// const characters = [
+// 	{ name: 'James T. Kirk', series: ['Star Trek'] },
+// 	{ name: 'Spock', series: ['Star Trek', 'Star Trek: The Next Generation'] },
+// 	{ name: 'Jean-Luc Picard', series: ['Star Trek: The Next Generation'] },
+// 	{ name: 'Worf', series: ['Star Trek: The Next Generation', 'Star Trek: Deep Space Nine'] }
+//  ];
 
-let nextGen = characters.filter(elem => elem.series.includes('Star Trek: The Next Generation'));
-console.log(nextGen);
+// let nextGen = characters.filter(elem => elem.series.includes('Star Trek: The Next Generation'));
+// console.log(nextGen);
 
 //  ## Exercise 3 NOT MANDATORY - send me the result by slack
 //  Use the filter method to create an array without duplicates. 
 //  The result should be
 //   ["blue","red","yellow"]
-const colors = ["blue", "red", "blue", "yellow"];
+// const colors = ["blue", "red", "blue", "yellow"];
+
+// // -----------------------
+// // REDUCE
+// // -----------------------
+
+// //WITHOUT Initial Value
+// const numbers = [10,20,35,40];
+
+// let sumOne =  numbers.reduce((accumulator, currentValue,index,arr) => {
+// 	console.log(`In the ${index} loop`)
+// 	console.log("accumulator = ", accumulator);
+// 	console.log("currentValue = ", currentValue);
+// 	return accumulator+currentValue
+// })
+
+// 1st loop
+// accumulator = numbers[0] = the first element in the array = 10
+// currentValue = 20
+// return accumulator+currentValue => return 30
+
+// 2nd loop
+// accumulator = return value of the 1st loop = 30
+// currentValue = 35
+// return accumulator+currentValue => return 65
+
+// 3rd loop
+// accumulator = return value of the 2nd loop = 65
+// currentValue = 40
+// return accumulator+currentValue => return 105
+
+// console.log(sumOne)
+
+
+//INITIAL VALUE
+//1000 initial value
+
+// const numbers = [10,20,35,40];
+
+// let sum =  numbers.reduce((accumulator, currentValue,index,arr) => {
+// 	return accumulator+currentValue
+// }, 1000)
+
+// 1st loop
+// accumulator = initialValue = 1000
+// currentValue = 10
+// return accumulator+currentValue => return 1010
+
+// // 2nd loop
+// accumulator = returned value from the 1st loop = 1010
+// currentValue = 20
+// return accumulator+currentValue => return 1030
+
+// // 3rd loop
+// accumulator = returned value from the 2nd loop = 1030
+// currentValue = 35
+// return accumulator+currentValue => return 1065
+
+// // 4th loop
+// accumulator = returned value from the 3rd loop = 1065
+// currentValue = 40
+// return accumulator+currentValue => return 1105
+
+// console.log(sum)
+
+
+const people = ["John","Lea", "Tom"];
+// secret society is JLT
+
+let secretSociety =  people.reduce((accumulator, currentValue) => {
+	return accumulator+currentValue[0]
+}, "")
+
+console.log(secretSociety)
+
+
+// reduce exercises
+const students = [
+	{name: 'Rich', score: 33}, 
+	{name: 'Peter', score: 55},
+	{name: 'John', score: 75}
+];
+
+// ## Exercise 1
+// Find the sum of the score of the students using reduce
+// ## Exercise 2
+// 1. Turn an array of voter objects into a count of how many people voted
+// 2. Do the exercise using reduce only
+// 3. Then do it by changing map and reduce
+
+
+
+let voters = [
+    {name:'Bob' , age: 30, voted: true},
+    {name:'Jake' , age: 32, voted: true},
+    {name:'Kate' , age: 25, voted: false},
+    {name:'Sam' , age: 20, voted: false},
+    {name:'Bob' , age: 30, voted: true},
+];
+
+// ## Exercise 3 : NOT MANDATORY
+// 1. Find the max value from an array of numbers using reduce
+
+const students = [
+	{name: 'Rich', score: 33}, 
+	{name: 'Peter', score: 55},
+	{name: 'John', score: 75}
+];
+
+let sum =  students.reduce((accumulator, element) => accumulator+element.score, 0)
+
+// console.log(sum)
+
+//  WITH INITIAL VALUE
+// 1st loop
+// accumulator = 0
+// element = {name: 'Rich', score: 33}
+// return accumulator+element.score = 33
+
+// 2nd loop
+// accumulator = 33
+// element = {name: 'Peter', score: 55}
+// return accumulator+element.score = 88
+
+
+// 3rd loop
+// accumulator = 88
+// element = {name: 'John', score: 75}
+// return accumulator+element.score = 163
+
+// 2nd loop
+// accumulator = the returned value from the 1st loop = 88
+// element = {name: 'John', score: 75}
+// return accumulator.score+element.score //PROBLEM
+
+
+//  WITHOUT INITIAL VALUE - PROBLEM
+
+// 1st loop
+// accumulator = {name: 'Rich', score: 33}
+// element = {name: 'Peter', score: 55}
+// return accumulator.score+element.score = 88
+
+
+// 2nd loop
+// accumulator = the returned value from the 1st loop = 88
+// element = {name: 'John', score: 75}
+// return accumulator.score+element.score //PROBLEM
+
+
+let voters = [
+   {name:'Bob' , age: 30, voted: true},
+   {name:'Jake' , age: 32, voted: true},
+   {name:'Kate' , age: 25, voted: false},
+   {name:'Sam' , age: 20, voted: false},
+   {name:'Bob' , age: 30, voted: true},
+];
+
+console.log(voters[0]["voted"]) //true
+console.log(0+voters[0]["voted"]) //0+true //0+1
+//Result 3
+
+let nbVoters = voters.reduce((accumulator,element) => {
+   if (element.voted == true) {
+	   return ++accumulator
+   } else {
+	   return accumulator
+   }
+
+}, 0)
+
+console.log(nbVoters)
+
+// 1st loop
+// accumulator = 0;
+// element.voted = true
+// return accumulator++ = 1
+
+// 2nd loop
+// accumulator = 1;
+// element.voted = true
+// return accumulator++ = 2
+
+// 3rd loop
+// accumulator = 2;
+// element.voted = false
+// return accumulator => return 2
+
+// WITH TERNARY OPERATOR
+let nbVotersTernary = voters.reduce((accumulator,element) => element.voted ? ++accumulator : accumulator, 0)
+console.log(nbVotersTernary)
+
+// WITH TRUE AND FALSE
+//true is equal to 1
+//false is equal to 0
+let nbVotersSecond = voters.reduce((accumulator,element) => 
+								   accumulator+element["voted"], 0)
+console.log(nbVotersSecond)
+
+
+
+
+
+
+
+
+
+
+
